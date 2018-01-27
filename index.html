@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <title>the decoy band</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Stint+Ultra+Expanded' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <header>
+    <h1>the<span id="decoy">decoy</span>band</h1>
+    <nav>
+      <a href="#book1">book one</a>
+      <a href="#book2">book two</a>
+      <a href="#book3">book three</a>
+    </nav>
+  </header>
+
+  <section id="albums">
+    <article id="book1" class="album">
+      <!-- book one -->
+      <iframe width="100%" height="525" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/340675&amp;color=00B6CC&amp;auto_play=false&amp;show_artwork=false"></iframe>
+    </article>
+
+    <article id="book2" class="album">
+      <!-- book two -->
+      <iframe width="100%" height="525" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/340678&amp;color=2bb619&amp;auto_play=false&amp;show_artwork=false"></iframe>
+    </article>
+
+    <article id="book3" class="album">
+      <!-- book three -->
+      <iframe width="100%" height="525" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/8604013&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false"></iframe>
+    </article>
+  </section>
+
+  <script type="text/javascript">
+    var setHeaderColor = function() {
+      var book = window.location.hash;
+      var decoy = document.getElementById('decoy');
+      if (book == '#book1') {
+        decoy.style['color'] = '#00B6CC';
+      }
+      else if (book == '#book2') {
+        decoy.style['color'] = '#2bb619';
+      }
+      else if (book == '#book3') {
+        decoy.style['color'] = '#ff6600';
+      }
+      else {
+        decoy.style['color'] = '#666';
+      }
+    };
+
+    window.onhashchange = function () {
+      setHeaderColor();
+    };
+
+    setHeaderColor();
+    
+  </script>
+</body>
+</html>
